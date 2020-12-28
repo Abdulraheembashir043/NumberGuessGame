@@ -72,6 +72,21 @@
   }
 }
 
+footer {
+  width: 200px;
+  margin: 0 auto;
+  position: absolute;
+  bottom: 3px;
+  left: 30%;
+  font-size: 1.2em;
+  font-weight: bold;
+
+  a {
+    color: green;
+    text-decoration: underline;
+  }
+}
+
 @media screen and (min-width: 376px) {
 
   .panel {
@@ -89,6 +104,20 @@
 
       input {
         width: 150px;
+      }
+    }
+  }
+
+  footer {
+    left: 43%;
+    font-size: 1.5em;
+
+    a {
+      text-decoration: underline;
+  
+      &:hover {
+        color: green;
+        text-decoration: none;
       }
     }
   }

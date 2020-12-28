@@ -73,6 +73,21 @@
   display: none;
 }
 
+footer {
+  width: 200px;
+  margin: 0 auto;
+  position: absolute;
+  bottom: 3px;
+  left: 30%;
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+footer a {
+  color: green;
+  text-decoration: underline;
+}
+
 @media screen and (min-width: 376px) {
   .panel {
     width: 500px;
@@ -85,6 +100,17 @@
   }
   .panel .top input {
     width: 150px;
+  }
+  footer {
+    left: 43%;
+    font-size: 1.5em;
+  }
+  footer a {
+    text-decoration: underline;
+  }
+  footer a:hover {
+    color: green;
+    text-decoration: none;
   }
 }
 /*# sourceMappingURL=style.css.map */
