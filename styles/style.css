@@ -26,6 +26,7 @@
   margin: 15px auto 0;
   font-weight: bold;
   cursor: pointer;
+  outline: none;
 }
 
 .panel button:disabled {
@@ -33,7 +34,7 @@
 }
 
 .panel button:focus {
-  outline-color: green;
+  border: 2px solid green;
 }
 
 .panel .top {
@@ -49,6 +50,7 @@
   padding: 2px;
   border-radius: 5px;
   border: 2px solid grey;
+  outline: none;
 }
 
 .panel .top input:disabled {
@@ -56,7 +58,7 @@
 }
 
 .panel .top input:focus {
-  outline-color: green;
+  border: 2px solid green;
 }
 
 .panel #label {
