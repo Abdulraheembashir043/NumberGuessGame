@@ -10,6 +10,7 @@ const label = document.querySelector('#label');
 const reset = document.querySelector('#reset');
 
 let guessCount = 1;
+number.focus();
 
 button.addEventListener('click', (e) => {
   let test = Number(number.value);
