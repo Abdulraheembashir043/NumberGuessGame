@@ -27,11 +27,13 @@ button.addEventListener('click', (e) => {
 
   if(test === random) {
     message.textContent = 'Congratulations! You got it right!';
+    remark.textContent = '';
     message.style.background = 'green';
-    message.style.color = 'white'
+    message.style.color = 'white';
     setGameOver();
-  } else if(guessCount === 10) {
+  } else if(guessCount === 7) {
     message.textContent = '!!!GAME OVER!!!';
+    remark.textContent = 'The number you are looking for is ' + random;
     setGameOver();
   } else {
     message.style.background = 'red';
@@ -53,7 +55,6 @@ function setGameOver() {
   button.disabled = true;
 
   reset.style.display = 'block';
-  remark.textContent = '';
 
   reset.addEventListener('click', resetGame);
 }
@@ -70,6 +71,7 @@ function resetGame() {
     guess.textContent = '';
     reset.style.display = 'none';
     message.textContent = '';
+    remark.textContent = '';
     
     random = Math.floor(Math.random() * 100 + 1);
     console.log(random);
