@@ -3,14 +3,18 @@
   padding: 0;
 }
 
+body {
+  background: url(../image/bg.jpg);
+  color: white;
+}
+
 .panel {
   width: 85%;
   margin: 10% auto 0;
   text-align: center;
-  border: 2px solid grey;
+  border: 2px solid white;
   padding: 20px 10px;
   border-radius: 10px;
-  background: #eee;
 }
 
 .panel h1 {
@@ -19,9 +23,11 @@
 }
 
 .panel button {
+  color: inherit;
+  background: rgba(2, 2, 27, 0);
   padding: 3px;
   display: block;
-  border: 2px solid grey;
+  border: 2px solid white;
   border-radius: 5px;
   margin: 15px auto 0;
   font-weight: bold;
@@ -46,10 +52,12 @@
 }
 
 .panel .top input {
+  color: inherit;
+  background: rgba(2, 2, 27, 0);
   width: 100px;
   padding: 2px;
   border-radius: 5px;
-  border: 2px solid grey;
+  border: 2px solid white;
   outline: none;
 }
 
@@ -58,7 +66,7 @@
 }
 
 .panel .top input:focus {
-  border: 2px solid green;
+  border: 2px solid white;
 }
 
 .panel #label {
@@ -84,7 +92,7 @@ footer {
 }
 
 footer a {
-  color: green;
+  color: inherit;
   text-decoration: underline;
 }
 

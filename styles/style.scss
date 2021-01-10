@@ -1,15 +1,22 @@
+// ***********Default***********
 * {
   margin: 0;
   padding: 0;
 }
+
+body {
+  background: url(../image/bg.jpg);
+  color: white;
+}
+
+// ***********Mobile***********
 .panel {
   width: 85%;
   margin: 10% auto 0;
   text-align: center;
-  border: 2px solid grey;
+  border: 2px solid white;
   padding: 20px 10px;
   border-radius: 10px;
-  background: #eee;
 
   h1 {
     font-size: 1.3em;
@@ -17,9 +24,11 @@
   }
 
   button {
+    color: inherit;
+    background: rgba(2, 2, 27, 0);
     padding: 3px;
     display: block;
-    border: 2px solid grey;
+    border: 2px solid white;
     border-radius: 5px;
     margin: 15px auto 0;
     font-weight: bold;
@@ -43,10 +52,12 @@
     }
 
     input {
+      color: inherit;
+      background: rgba(2, 2, 27, 0);
       width: 100px;
       padding: 2px;
       border-radius: 5px;
-      border: 2px solid grey;
+      border: 2px solid white;
       outline: none;
 
       &:disabled {
@@ -54,7 +65,7 @@
       }
 
       &:focus {
-        border: 2px solid green;
+        border: 2px solid white;
       }
     }
   }
@@ -82,11 +93,12 @@ footer {
   font-weight: bold;
 
   a {
-    color: green;
+    color: inherit;
     text-decoration: underline;
   }
 }
 
+// ***********Desktop***********
 @media screen and (min-width: 376px) {
 
   .panel {

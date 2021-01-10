@@ -1,5 +1,4 @@
 let random = Math.floor(Math.random() * 100) + 1;
-console.log(random);
 
 const number = document.querySelector('input');
 const button = document.querySelector('button');
@@ -16,64 +15,67 @@ button.addEventListener('click', (e) => {
   let test = Number(number.value);
 
   if(number.value === '') {
-    label.style.display = 'inline';
-    guess.style.display = 'inline';
-    guess.textContent += 0 + ' ';
-  } else {
-    label.style.display = 'inline';
-    guess.style.display = 'inline';
-    guess.textContent += number.value + ' ';
+    displayElement('inline', 0);
+  } else if(isNaN(number.value)) {
+    number.focus();
+    if(guessCount > 1) {
+      guessCount--
+    }
+  }else {
+    displayElement('inline', number.value);
   }
 
   if(test === random) {
-    message.textContent = 'Congratulations! You got it right!';
-    remark.textContent = '';
-    message.style.background = 'green';
-    message.style.color = 'white';
+    displayContent('green', 'white', 'Congratulations! You got it right!', '');
     setGameOver();
   } else if(guessCount === 7) {
-    message.textContent = '!!!GAME OVER!!!';
-    remark.textContent = 'The number you are looking for is ' + random;
+    displayContent('red', 'white', '!!!GAME OVER!!!', 'The number you are looking for is ' + random)
     setGameOver();
-  } else {
-    message.style.background = 'red';
-    message.style.color = 'white';
-    message.textContent = 'Wrong';
+  } else if(!isNaN(number.value)) {
+    displayContent('red', 'white', 'Wrong')
     if(test < random) {
-        remark.textContent = 'Last guess was too Low!';
-      } else if(test > random) {
-        remark.textContent = 'Last guess was too High!';
-      }
+      remark.textContent = 'Last guess was too Low!';
+    } else if(test > random) {
+      remark.textContent = 'Last guess was too High!';
     }
+  }
 
   number.value = '';
   guessCount++;
+  number.focus();
 })
+
+function displayElement(display, value) {
+  label.style.display = display;
+  guess.style.display = display;
+  guess.textContent += value + ' ';
+}
+
+function displayContent(background, color, msg, rmk) {
+  message.style.background = background;
+  message.style.color = color;
+  message.textContent = msg;
+  remark.textContent = rmk;
+}
 
 function setGameOver() {
   number.disabled = true;
   button.disabled = true;
-
   reset.style.display = 'block';
-
   reset.addEventListener('click', resetGame);
 }
 
 function resetGame() {
+  guessCount = 1;
+  number.disabled = false;
+  button.disabled = false;
+  label.style.display = 'none';
+  guess.style.display = 'none';
+  reset.style.display = 'none';
+  guess.textContent = '';
+  message.textContent = '';
+  remark.textContent = '';
+  number.focus();
 
-    guessCount = 1;
-
-    number.disabled = false;
-    button.disabled = false;
-    
-    label.style.display = 'none';
-    guess.style.display = 'none';
-    guess.textContent = '';
-    reset.style.display = 'none';
-    message.textContent = '';
-    remark.textContent = '';
-    
-    random = Math.floor(Math.random() * 100 + 1);
-    console.log(random);
-
+  random = Math.floor(Math.random() * 100 + 1);
 }
